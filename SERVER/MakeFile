@@ -1,0 +1,18 @@
+CC      = gcc
+CFLAGS  = -Wall -Wextra -g
+OUT     = server
+SRC     = server_main.c server_helper.c
+OBJ     = $(SRC:.c=.o)
+
+all: $(OUT)
+
+$(OUT): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $@
+
+%.o: %.c server.h server_helper.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OUT) $(OBJ) CLIENT_INFO.txt
+
+

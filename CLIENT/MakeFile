@@ -1,0 +1,14 @@
+
+CC=gcc
+CFLAGS=-Wall
+SRC     = client_main.c client_helper.c
+OBJ     = $(SRC:.c=.o)
+
+
+all: client
+
+client: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o client
+
+clean:
+	rm -f client $(OBJ)
