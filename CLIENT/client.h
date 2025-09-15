@@ -18,7 +18,7 @@
 
 #define MAX_NAME    128
 #define MAX_LINE    512
-
+ 
 /* ---------- ANSI Color Codes ---------- */
 #define COL_RESET   "\x1b[0m"
 #define COL_RED     "\x1b[31m"

@@ -11,7 +11,10 @@
 int main(int argc, char **argv) 
 {
     int port = (argc >= 2) ? atoi(argv[1]) : 12345;
-    if (port <= 0) port = 12345;
+    if (port <= 0) 
+    {
+        port = 12345;
+    } 
 
     signal(SIGPIPE, SIG_IGN);
     signal(SIGINT,  cleanup);
@@ -22,7 +25,8 @@ int main(int argc, char **argv)
     server_fd = socket(AF_INET, SOCK_STREAM, 0);
     if (server_fd < 0) 
     { 
-        perror("socket"); return 1; 
+        perror("socket"); 
+        return 1; 
     }
 
     int opt = 1;
@@ -36,11 +40,13 @@ int main(int argc, char **argv)
 
     if (bind(server_fd, (struct sockaddr*)&srv, sizeof srv) < 0) 
     {
-        perror("bind"); return 1;
+        perror("bind"); 
+        return 1;
     }
     if (listen(server_fd, 8) < 0) 
     {
-        perror("listen"); return 1; 
+        perror("listen"); 
+        return 1; 
     }
 
     printf(COL_GREEN
@@ -83,7 +89,10 @@ int main(int argc, char **argv)
                 else 
                 {
                     FD_SET(newfd, &master);
-                    if (newfd > maxfd) maxfd = newfd;
+                    if (newfd > maxfd) 
+                    {
+                        maxfd = newfd;
+                    }
                     char ip[INET_ADDRSTRLEN];
                     inet_ntop(AF_INET, &cli.sin_addr, ip, sizeof ip);
                     printf(COL_CYAN
@@ -97,7 +106,10 @@ int main(int argc, char **argv)
         for (int i = 0; i < MAX_CLIENTS; i++) 
         {
             int fd = clients[i].fd;
-            if (fd == -1) continue;
+            if (fd == -1) 
+            {
+                continue;
+            }
             if (!FD_ISSET(fd, &readfds)) 
             {
                 continue;
@@ -119,8 +131,10 @@ int main(int argc, char **argv)
             }
             buf[n] = '\0';
             trim(buf);
-            if (buf[0] == '\0') continue;
-
+            if (buf[0] == '\0') 
+            {
+                continue;
+            }
             if (!clients[i].registered) 
             {
                 strncpy(clients[i].name, buf, MAX_NAME - 1);
@@ -205,3 +219,4 @@ int main(int argc, char **argv)
     cleanup(0);
     return 0;
 }
+

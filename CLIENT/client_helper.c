@@ -6,7 +6,8 @@
 #include "client_helper.h"
 
 
-void die(const char *msg) {
+void die(const char *msg) 
+{
     perror(msg);
     exit(1);
 }
