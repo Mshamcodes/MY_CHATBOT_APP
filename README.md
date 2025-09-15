@@ -78,8 +78,9 @@ Once registered with server the respective Client is prompted with options to se
 
 ![alt text](image-5.png)
 
-## CLIENT OPTIONS 
--> LIST CLIENTS
+## CLIENT OPTIONS (LIST CLIENT , CHAT WITH OTHER CLIENT, BROADCAST MESSAGE TO ALL CONNECTED CLIENTS from one client)
+
+- > LIST CLIENTS
 
 ![alt text](image-6.png)
 
@@ -124,6 +125,31 @@ CLIENT 2
 
 ![alt text](image-15.png)
 
+- > BROADCAST MESSAGE TO ALL CONNECTED CLIENTS from one client
+
+This can be done once we connect multiple clients and one of the connected client wishes to send messages to all other client.
+
+In the Client terminal from where we want to BROADCAST message to all other clients just simply give this prompt 
+
+BROADCAST <message>
+
+example
+
+-> Three connected client we have 
+
+MAHADEV
+SHAMBHI
+GI 
+
+From MAHADEV we send the message to all other clients connected to server
+
+![alt text](image-16.png)
+
+Message recived on other client side
+
+![alt text](image-17.png) - > SHAMBHI
+
+![alt text](image-18.png) - > GI
 
 
 
