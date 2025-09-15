@@ -20,14 +20,14 @@ MY_CHATBOT_APP is a simple multi-client chat application written in C, enabling 
 
 | File                      | Description                                          |
 |---------------------------|------------------------------------------------------|
-| `SERVER/server_main.c`    | Main server program handling connections and events |
+| `SERVER/server_main.c`    | Main server program handling connections and events  |
 | `SERVER/server_helper.c`  | Helper functions for client management and messaging |
 | `SERVER/server_helper.h`  | Header file for server helper functions              |
 | `SERVER/server.h`         | Server constants, data structures, and includes      |
 | `CLIENT/client_main.c`    | Main client program for connecting and interacting   |
-| `CLIENT/client_helper.c`  | Client-side helper functions                          |
-| `CLIENT/client_helper.h`  | Header for client helper functions                    |
-| `CLIENT/client.h`         | Client constants, includes, and color codes           |
+| `CLIENT/client_helper.c`  | Client-side helper functions                         |
+| `CLIENT/client_helper.h`  | Header for client helper functions                   |
+| `CLIENT/client.h`         | Client constants, includes, and color codes          |
 
 
 ## Prerequisites
@@ -78,7 +78,9 @@ Once registered with server the respective Client is prompted with options to se
 
 ![alt text](image-5.png)
 
+
 ## CLIENT OPTIONS (LIST CLIENT , CHAT WITH OTHER CLIENT, BROADCAST MESSAGE TO ALL CONNECTED CLIENTS from one client)
+
 
 - > LIST CLIENTS
 
@@ -95,6 +97,7 @@ In this pic the second client is registere to server and able to LIST clients
 SERVER SIDE OUTPUT 
 
 ![alt text](image-9.png)
+
 
 - > CHAT WITH OTHER CLIENT
 
@@ -125,6 +128,8 @@ CLIENT 2
 
 ![alt text](image-15.png)
 
+
+
 - > BROADCAST MESSAGE TO ALL CONNECTED CLIENTS from one client
 
 This can be done once we connect multiple clients and one of the connected client wishes to send messages to all other client.
@@ -138,12 +143,14 @@ example
 -> Three connected client we have 
 
 MAHADEV
-SHAMBHI
+shambhi
 GI 
+
 
 From MAHADEV we send the message to all other clients connected to server
 
 ![alt text](image-16.png)
+
 
 Message recived on other client side
 
